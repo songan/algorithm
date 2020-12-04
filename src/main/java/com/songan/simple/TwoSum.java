@@ -7,7 +7,7 @@ import java.util.Map;
  * 两数之和
  * @author songan
  */
-public class Solution {
+public class TwoSum {
 
     public static int[] twoSum(int[] nums, int target) {
         Map<Integer, Integer> map = new HashMap<>();
