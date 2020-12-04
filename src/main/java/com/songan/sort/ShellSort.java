@@ -10,7 +10,7 @@ import java.util.Arrays;
 public class ShellSort {
 
     public static void main(String[] args) {
-        int[] arr = new int[]{20, 2, 34, 12, 6, 3, 43};
+        int[] arr = new int[]{20, 2, 34, 12, 6, 3, 43, 23};
         shellSort(arr);
     }
 
