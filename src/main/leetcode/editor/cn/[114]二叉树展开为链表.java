@@ -16,20 +16,25 @@
  * }
  */
 class Solution {
-    public List<Integer> inorderTraversal(TreeNode root) {
-        List<Integer> res = new ArrayList<>();
-        process(res, root);
-        return res;
-    }
-
-    private void process(List<Integer> result, TreeNode root) {
+    public void flatten(TreeNode root) {
         if (root == null) {
             return;
         }
+        flatten(root.left);
+        flatten(root.right);
 
-        process(result, root.left);
-        result.add(root.val);
-        process(result, root.right);
+        TreeNode left = root.left;
+        TreeNode right = root.right;
+
+        root.right = left;
+        root.left = null;
+
+        TreeNode t = root;
+        while (t.right != null) {
+            t = t.right;
+        }
+
+        t.right = right;
     }
 }
 //leetcode submit region end(Prohibit modification and deletion)
